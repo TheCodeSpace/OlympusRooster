@@ -4,6 +4,8 @@ var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ
 
 var next_week = false;
 
+var DefaultCached = false;
+
 date = new Date()
 
 function getDateRangeOfWeek(weekNo){
@@ -19,11 +21,7 @@ function getDateRangeOfWeek(weekNo){
     return rangeIsFrom + " t/m "+rangeIsTo;
 };
 
-function setDefault(id, teacher){
-    Cookies.set('id', id)
-    Cookies.set('teacher', teacher)
-    location.reload()
-}
+
 
 function changeWeek() {
     if (next_week) {
@@ -80,6 +78,12 @@ window.onload = function() {
     }
 }
 
+function setDefault(id, teacher){
+    Cookies.set('id', id)
+    Cookies.set('teacher', teacher)
+    location.reload()
+}
+
 function getDefault(){
     if (Cookies.get('teacher') == "true"){
         return [Cookies.get('id'), true]
@@ -116,14 +120,14 @@ function getStudentTable(unparsed, weekIn) {
     } else if (studentID <= 999) {
         studentIDD = "00" + studentID
     }
-
-    document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/s/s" + studentIDD + ".htm"
+	console.log("fetching data")
+	document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/s/s" + studentIDD + ".htm"
     document.getElementById("iframe").removeAttribute("hidden")
     document.getElementById("options").setAttribute("hidden", "hidden")
 }
 
 function getTeacherTable(unparsed) {
-    studentID = arraySearch(teachers, unparsed) + 1
+    teacherID = arraySearch(teachers, unparsed) + 1
     date = new Date()
     week = "";
     if (date.getWeek() <= 9) {
@@ -132,17 +136,17 @@ function getTeacherTable(unparsed) {
         week = date.getWeek()
     }
     
-    studentIDD = "";
+    teacherIDD = "";
 
-    if (studentID <= 9) {
-        studentIDD = "0000" + studentID
-    } else if (studentID <= 99) {
-        studentIDD = "000" + studentID
-    } else if (studentID <= 999) {
-        studentIDD = "00" + studentID
+    if (teacherID <= 9) {
+        teacherIDD = "0000" + teacherID
+    } else if (teacherID <= 99) {
+        teacherIDD = "000" + teacherID
+    } else if (teacherID <= 999) {
+        teacherIDD = "00" + teacherID
     }
 
-    document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/t/t" + studentIDD + ".htm"
+    document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/t/t" + teacherIDD + ".htm"
     document.getElementById("iframe").removeAttribute("hidden")
     document.getElementById("options").setAttribute("hidden", "hidden")
 }
