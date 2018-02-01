@@ -2,20 +2,26 @@ var students = ["10004","10005","10007","10009","10010","10011","10013","10014",
 
 var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ","BRK","BRM","BSC","BTN","DJK","DMD","DMN","DPP","DRC","DRK","DTS","DTV","EER","ELF","ELZ","ERK","EST","EVM","EVR","GNS","GRH","GRV","GTH","HGS","HKS","HMA","HMD","HPK","HRT","HSA","HSD","HSI","HSM","HUT","HZL","JCB","JNJ","JNT","JNW","KHH","KLK","KLS","KND","KNN","KPM","KRG","KRK","KRV","KST","LBL","LCR","LFN","LMM","LNG","MLL","MRN","MST","OLS","OSC","OST","OZC","PER","PLT","POL","RDN","RSS","SCJ","SCK","SCL","SLH","SLM","SLS","SLT","SMD","SNJ","SPM","SPR","STD","STF","STM","STR","SVY","SWS","TAK","THN","TMN","TRN","UBB","ULB","VLD","VRC","VRG","VSS","WNN","WNT","WTR","ZDN","ZNT","ZWR","ZWS"];
 
-function setDefault(ID, teacher){
-    Cookies.set('id', id)
+function SetDefault(ID, teacher){
+    Cookies.set('number', students[ID])
     Cookies.set('teacher', teacher)
 }
 
-window.onload = ""
-
 function getDefault(){
-    if (Cookies.get('teacher') == true){
-        return [arraySearch(teachers, Cookies.get('id')), true]
-    } else {
-        return [arraySearch(students, Cookies.get('id')), false]
+    if(Cookies.get('teacher')="T"){
+        teachers[Cookies.get('ID')]
+    }else{
+        students[Cookies.get('ID')]
     }
 }
+
+function getQueryString(field, url) {
+	var href = url ? url : window.location.href;
+	var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+	var string = reg.exec(href);
+	return string ? string[1] : null;
+}
+
 
 function getStudentTable(unparsed) {
     studentID = arraySearch(students, unparsed) + 1
@@ -26,7 +32,9 @@ function getStudentTable(unparsed) {
     } else {
         week = date.getWeek()
     }
-    
+
+    console.log(studentID)
+
     studentIDD = "";
 
     if (studentID <= 9) {
@@ -40,12 +48,6 @@ function getStudentTable(unparsed) {
     document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/s/s" + studentIDD + ".htm"
     document.getElementById("iframe").removeAttribute("hidden")
     document.getElementById("options").setAttribute("hidden", "hidden")
-}
-
-function openSettings() {
-    document.getElementById("iframe").setAttribute("hidden", "hidden")
-    document.getElementById("options").removeAttribute("hidden")
-    //document.getElementById("oc_nummer").value = Cookies.get("number")
 }
 
 Date.prototype.getWeek = function() {
