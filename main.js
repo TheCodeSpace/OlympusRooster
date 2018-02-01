@@ -5,6 +5,7 @@ var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ
 function setDefault(id, teacher){
     Cookies.set('id', id)
     Cookies.set('teacher', teacher)
+    location.reload()
 }
 
 window.onload = function() {
@@ -19,10 +20,10 @@ window.onload = function() {
 }
 
 function getDefault(){
-    if(Cookies.get('teacher')="T"){
-        teachers[Cookies.get('ID')]
-    }else{
-        students[Cookies.get('ID')]
+    if (Cookies.get('teacher') == "true"){
+        return [Cookies.get('id'), true]
+    } else {
+        return [Cookies.get('id'), false]
     }
 }
 
