@@ -24,9 +24,7 @@ function getStudentTable(unparsed) {
     } else {
         week = date.getWeek()
     }
-
-    console.log(studentID)
-
+    
     studentIDD = "";
 
     if (studentID <= 9) {
@@ -40,6 +38,12 @@ function getStudentTable(unparsed) {
     document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/s/s" + studentIDD + ".htm"
     document.getElementById("iframe").removeAttribute("hidden")
     document.getElementById("options").setAttribute("hidden", "hidden")
+}
+
+function openSettings() {
+    document.getElementById("iframe").setAttribute("hidden", "hidden")
+    document.getElementById("options").removeAttribute("hidden")
+    //document.getElementById("oc_nummer").value = Cookies.get("number")
 }
 
 Date.prototype.getWeek = function() {
