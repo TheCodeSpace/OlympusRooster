@@ -63,7 +63,7 @@ function getStudentTable(unparsed) {
 }
 
 function getTeacherTable(unparsed) {
-    studentID = arraySearch(students, unparsed) + 1
+    studentID = arraySearch(teachers, unparsed) + 1
     date = new Date()
     week = "";
     if (date.getWeek() <= 9) {
