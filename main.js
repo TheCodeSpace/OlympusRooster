@@ -4,8 +4,6 @@ var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ
 
 var next_week = false;
 
-var DefaultCached = false;
-
 date = new Date()
 
 function getDateRangeOfWeek(weekNo){
@@ -20,8 +18,6 @@ function getDateRangeOfWeek(weekNo){
     var rangeIsTo = d1.getDate() +"/" + eval(d1.getMonth()+1)+ "/" + d1.getFullYear();
     return rangeIsFrom + " t/m "+rangeIsTo;
 };
-
-
 
 function changeWeek() {
     if (next_week) {
