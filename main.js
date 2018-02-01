@@ -2,7 +2,7 @@ var students = ["10004","10005","10007","10009","10010","10011","10013","10014",
 
 var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ","BRK","BRM","BSC","BTN","DJK","DMD","DMN","DPP","DRC","DRK","DTS","DTV","EER","ELF","ELZ","ERK","EST","EVM","EVR","GNS","GRH","GRV","GTH","HGS","HKS","HMA","HMD","HPK","HRT","HSA","HSD","HSI","HSM","HUT","HZL","JCB","JNJ","JNT","JNW","KHH","KLK","KLS","KND","KNN","KPM","KRG","KRK","KRV","KST","LBL","LCR","LFN","LMM","LNG","MLL","MRN","MST","OLS","OSC","OST","OZC","PER","PLT","POL","RDN","RSS","SCJ","SCK","SCL","SLH","SLM","SLS","SLT","SMD","SNJ","SPM","SPR","STD","STF","STM","STR","SVY","SWS","TAK","THN","TMN","TRN","UBB","ULB","VLD","VRC","VRG","VSS","WNN","WNT","WTR","ZDN","ZNT","ZWR","ZWS"];
 
-var next_week = false;
+var next_week = true ;
 
 date = new Date()
 
@@ -65,6 +65,7 @@ window.onload = function() {
 
     if (Cookies.get("id")) {
 		id = getDefault()
+
 		changeWeek()
         if (id[1] == false) {
             getStudentTable(id[0], date.getWeek())
