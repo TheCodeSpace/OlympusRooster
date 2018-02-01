@@ -28,7 +28,8 @@ function setDefault(id, teacher){
 function changeWeek() {
     if (next_week) {
         document.getElementById("weekArrow").setAttribute("class", "fas fa-arrow-right")
-        document.getElementById("week").innerHTML = "<b>Week van </b>" + getDateRangeOfWeek(date.getWeek())
+        document.getElementById("week").childNodes[1].removeAttribute("hidden")
+        document.getElementById("week").childNodes[2].setAttribute("hidden","hidden")
         next_week = false
 
         if (Cookies.get("id")) {
@@ -50,8 +51,8 @@ function changeWeek() {
         } else {
             week_ += 1
         }
-
-        document.getElementById("week").innerHTML = "<b>Week van </b>" + getDateRangeOfWeek(week_)
+        document.getElementById("week").childNodes[2].removeAttribute("hidden")
+        document.getElementById("week").childNodes[1].setAttribute("hidden","hidden")
 
         if (Cookies.get("id")) {
             id = getDefault()
@@ -65,9 +66,12 @@ function changeWeek() {
 }
 
 window.onload = function() {
-    document.getElementById("week").innerHTML = "<b>Week van </b>" + getDateRangeOfWeek(date.getWeek())
+	document.getElementById("week").childNodes[1].innerHTML = getDateRangeOfWeek(date.getWeek())
+	document.getElementById("week").childNodes[2].innerHTML = getDateRangeOfWeek(date.getWeek()+1)
+
     if (Cookies.get("id")) {
-        id = getDefault()
+		id = getDefault()
+		changeWeek()
         if (id[1] == false) {
             getStudentTable(id[0], date.getWeek())
         } else {
