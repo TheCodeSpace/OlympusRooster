@@ -2,19 +2,63 @@ var students = ["10004","10005","10007","10009","10010","10011","10013","10014",
 
 var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ","BRK","BRM","BSC","BTN","DJK","DMD","DMN","DPP","DRC","DRK","DTS","DTV","EER","ELF","ELZ","ERK","EST","EVM","EVR","GNS","GRH","GRV","GTH","HGS","HKS","HMA","HMD","HPK","HRT","HSA","HSD","HSI","HSM","HUT","HZL","JCB","JNJ","JNT","JNW","KHH","KLK","KLS","KND","KNN","KPM","KRG","KRK","KRV","KST","LBL","LCR","LFN","LMM","LNG","MLL","MRN","MST","OLS","OSC","OST","OZC","PER","PLT","POL","RDN","RSS","SCJ","SCK","SCL","SLH","SLM","SLS","SLT","SMD","SNJ","SPM","SPR","STD","STF","STM","STR","SVY","SWS","TAK","THN","TMN","TRN","UBB","ULB","VLD","VRC","VRG","VSS","WNN","WNT","WTR","ZDN","ZNT","ZWR","ZWS"];
 
+var next_week = false;
+
+date = new Date()
+
 function setDefault(id, teacher){
     Cookies.set('id', id)
     Cookies.set('teacher', teacher)
     location.reload()
 }
 
+function changeWeek() {
+    if (next_week) {
+        document.getElementById("weekArrow").setAttribute("class", "fas fa-arrow-right")
+        document.getElementById("week").innerHTML = "<b>Week: </b>" + date.getWeek()
+        next_week = false
+
+        if (Cookies.get("id")) {
+            id = getDefault()
+            if (id[1] == false) {
+                getStudentTable(id[0], date.getWeek())
+            } else {
+                getTeacherTable(id[0], date.getWeek())
+            }
+        }
+    } else {
+        document.getElementById("weekArrow").setAttribute("class", "fas fa-arrow-left")
+        next_week = true
+
+        week_ = date.getWeek()
+
+        if (date.getWeek() == 53) {
+            week_ = 1
+        } else {
+            week_ += 1
+        }
+
+        document.getElementById("week").innerHTML = "<b>Week: </b>" + week_
+
+        if (Cookies.get("id")) {
+            id = getDefault()
+            if (id[1] == false) {
+                getStudentTable(id[0], week_)
+            } else {
+                getTeacherTable(id[0], week_)
+            }
+        }
+    }
+}
+
 window.onload = function() {
+    document.getElementById("week").innerHTML = "<b>Week: </b>" + date.getWeek()
     if (Cookies.get("id")) {
         id = getDefault()
         if (id[1] == false) {
-            getStudentTable(id[0])
+            getStudentTable(id[0], date.getWeek())
         } else {
-            getTeacherTable(id[0])
+            getTeacherTable(id[0], date.getWeek())
         }
     }
 }
@@ -35,14 +79,13 @@ function getQueryString(field, url) {
 }
 
 
-function getStudentTable(unparsed) {
+function getStudentTable(unparsed, weekIn) {
     studentID = arraySearch(students, unparsed) + 1
-    date = new Date()
     week = "";
-    if (date.getWeek() <= 9) {
-        week = "0" + date.getWeek()
+    if (weekIn <= 9) {
+        week = "0" + weekIn
     } else {
-        week = date.getWeek()
+        week = weekIn
     }
 
     console.log(studentID)
