@@ -6,6 +6,19 @@ var next_week = false;
 
 date = new Date()
 
+function getDateRangeOfWeek(weekNo){
+    var d1 = new Date();
+    numOfdaysPastSinceLastMonday = eval(d1.getDay()- 1);
+    d1.setDate(d1.getDate() - numOfdaysPastSinceLastMonday);
+    var weekNoToday = d1.getWeek();
+    var weeksInTheFuture = eval( weekNo - weekNoToday );
+    d1.setDate(d1.getDate() + eval( 7 * weeksInTheFuture ));
+    var rangeIsFrom = d1.getDate() +"/" + eval(d1.getMonth()+1)+ "/" + d1.getFullYear();
+    d1.setDate(d1.getDate() + 6);
+    var rangeIsTo = d1.getDate() +"/" + eval(d1.getMonth()+1)+ "/" + d1.getFullYear();
+    return rangeIsFrom + " t/m "+rangeIsTo;
+};
+
 function setDefault(id, teacher){
     Cookies.set('id', id)
     Cookies.set('teacher', teacher)
@@ -15,7 +28,7 @@ function setDefault(id, teacher){
 function changeWeek() {
     if (next_week) {
         document.getElementById("weekArrow").setAttribute("class", "fas fa-arrow-right")
-        document.getElementById("week").innerHTML = "<b>Week: </b>" + date.getWeek()
+        document.getElementById("week").innerHTML = "<b>Week van </b>" + getDateRangeOfWeek(date.getWeek())
         next_week = false
 
         if (Cookies.get("id")) {
@@ -38,7 +51,7 @@ function changeWeek() {
             week_ += 1
         }
 
-        document.getElementById("week").innerHTML = "<b>Week: </b>" + week_
+        document.getElementById("week").innerHTML = "<b>Week van </b>" + getDateRangeOfWeek(week_)
 
         if (Cookies.get("id")) {
             id = getDefault()
@@ -52,7 +65,7 @@ function changeWeek() {
 }
 
 window.onload = function() {
-    document.getElementById("week").innerHTML = "<b>Week: </b>" + date.getWeek()
+    document.getElementById("week").innerHTML = "<b>Week van </b>" + getDateRangeOfWeek(date.getWeek())
     if (Cookies.get("id")) {
         id = getDefault()
         if (id[1] == false) {
