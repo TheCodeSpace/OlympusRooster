@@ -116,7 +116,6 @@ function getStudentTable(unparsed, weekIn) {
     } else if (studentID <= 999) {
         studentIDD = "00" + studentID
     }
-	console.log("fetching data")
 	document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/s/s" + studentIDD + ".htm"
     document.getElementById("iframe").removeAttribute("hidden")
     document.getElementById("options").setAttribute("hidden", "hidden")
