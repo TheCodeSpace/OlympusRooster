@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OlympusCollege Rooster</title>
+
+    <!--Bootstrap Imports-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
+    <script src="main.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="http://www.olympuscollege.nl/wp-content/uploads/2017/08/olympus-college-logo.svg" width="53" height="30" class="d-inline-block align-top" alt="">
+            &nbspOlympus College Rooster
+        </a>
+    </nav>
+    <br>
+    <center>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Welkom bij het rooster. Geef aub je OC nummer op.</h5>
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="oc_nummer_text">OC Nummer</span>
+                    </div>
+                    <input type="text" pattern="\d*" class="form-control" aria-label="OC Nummer" aria-describedby="inpoc_nummer_text" id="oc_nummer">
+                </div>
+                <br>
+                <button class="btn btn-outline-secondary" type="button">Ik ben een leerling</button>
+                <br><br>
+                <button class="btn btn-outline-secondary" type="button">Ik ben een docent</button>
+            </div>
+        </div>
+        <iframe id="iframe" width="90%" height="90%"></iframe>
+    </center>
+</body>
+</html>
