@@ -19,12 +19,20 @@ window.onload = function() {
 }
 
 function getDefault(){
-    if (Cookies.get('teacher') == true){
-        return [arraySearch(teachers, Cookies.get('id')), true]
-    } else {
-        return [arraySearch(students, Cookies.get('id')), false]
+    if(Cookies.get('teacher')="T"){
+        teachers[Cookies.get('ID')]
+    }else{
+        students[Cookies.get('ID')]
     }
 }
+
+function getQueryString(field, url) {
+	var href = url ? url : window.location.href;
+	var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+	var string = reg.exec(href);
+	return string ? string[1] : null;
+}
+
 
 function getStudentTable(unparsed) {
     studentID = arraySearch(students, unparsed) + 1
@@ -35,7 +43,9 @@ function getStudentTable(unparsed) {
     } else {
         week = date.getWeek()
     }
-    
+
+    console.log(studentID)
+
     studentIDD = "";
 
     if (studentID <= 9) {
