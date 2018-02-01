@@ -2,12 +2,21 @@ var students = ["10004","10005","10007","10009","10010","10011","10013","10014",
 
 var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ","BRK","BRM","BSC","BTN","DJK","DMD","DMN","DPP","DRC","DRK","DTS","DTV","EER","ELF","ELZ","ERK","EST","EVM","EVR","GNS","GRH","GRV","GTH","HGS","HKS","HMA","HMD","HPK","HRT","HSA","HSD","HSI","HSM","HUT","HZL","JCB","JNJ","JNT","JNW","KHH","KLK","KLS","KND","KNN","KPM","KRG","KRK","KRV","KST","LBL","LCR","LFN","LMM","LNG","MLL","MRN","MST","OLS","OSC","OST","OZC","PER","PLT","POL","RDN","RSS","SCJ","SCK","SCL","SLH","SLM","SLS","SLT","SMD","SNJ","SPM","SPR","STD","STF","STM","STR","SVY","SWS","TAK","THN","TMN","TRN","UBB","ULB","VLD","VRC","VRG","VSS","WNN","WNT","WTR","ZDN","ZNT","ZWR","ZWS"];
 
-function setDefault(ID, teacher){
+function setDefault(id, teacher){
     Cookies.set('id', id)
     Cookies.set('teacher', teacher)
 }
 
-window.onload = ""
+window.onload = function() {
+    if (Cookies.get("id")) {
+        id = getDefault()
+        if (id[1] == false) {
+            getStudentTable(id[0])
+        } else {
+            getTeacherTable(id[0])
+        }
+    }
+}
 
 function getDefault(){
     if (Cookies.get('teacher') == true){
@@ -38,6 +47,31 @@ function getStudentTable(unparsed) {
     }
 
     document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/s/s" + studentIDD + ".htm"
+    document.getElementById("iframe").removeAttribute("hidden")
+    document.getElementById("options").setAttribute("hidden", "hidden")
+}
+
+function getTeacherTable(unparsed) {
+    studentID = arraySearch(students, unparsed) + 1
+    date = new Date()
+    week = "";
+    if (date.getWeek() <= 9) {
+        week = "0" + date.getWeek()
+    } else {
+        week = date.getWeek()
+    }
+    
+    studentIDD = "";
+
+    if (studentID <= 9) {
+        studentIDD = "0000" + studentID
+    } else if (studentID <= 99) {
+        studentIDD = "000" + studentID
+    } else if (studentID <= 999) {
+        studentIDD = "00" + studentID
+    }
+
+    document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/t/t" + studentIDD + ".htm"
     document.getElementById("iframe").removeAttribute("hidden")
     document.getElementById("options").setAttribute("hidden", "hidden")
 }
