@@ -24,7 +24,7 @@
     </nav>
     <br>
     <center>
-        <div class="card" style="width: 18rem;">
+        <div id="options" class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Welkom bij het rooster. Geef aub je OC nummer op.</h5>
                 <div class="input-group input-group-lg">
@@ -34,12 +34,12 @@
                     <input type="text" pattern="\d*" class="form-control" aria-label="OC Nummer" aria-describedby="inpoc_nummer_text" id="oc_nummer">
                 </div>
                 <br>
-                <button class="btn btn-outline-secondary" type="button">Ik ben een leerling</button>
+                <button class="btn btn-outline-secondary" onclick="getStudentTable(document.getElementById('oc_nummer').value)" type="button">Ik ben een leerling</button>
                 <br><br>
                 <button class="btn btn-outline-secondary" type="button">Ik ben een docent</button>
             </div>
         </div>
-        <iframe id="iframe" width="90%" height="90%"></iframe>
+        <iframe id="iframe" width="90%" height="800px" hidden frameBorder="0"></iframe>
     </center>
 </body>
 </html>
