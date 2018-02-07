@@ -76,8 +76,8 @@ window.onload = function() {
 }
 
 function setDefault(id, teacher){
-    Cookies.set('id', id)
-    Cookies.set('teacher', teacher)
+    Cookies.set('id', id, { expires: 365 })
+    Cookies.set('teacher', teacher, { expires: 365 })
     location.reload()
 }
 
