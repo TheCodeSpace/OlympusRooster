@@ -62,7 +62,7 @@ function changeWeek() {
 function putInStudents() {
     html = '<select class="selectpicker" data-live-search="true" id="naam">'
     for (let i = 0; i < students.length; i++) {
-        html += "<option value='" + students[i] + "'>" + students[i] + "</option>"
+        html += "<option value='" + i + "'>" + students[i] + "</option>"
         if (i == (parseInt(students.length)-1)) {
             html += "</select>"
             document.getElementById("name__").innerHTML = html
@@ -120,7 +120,7 @@ function getQueryString(field, url) {
 
 
 function getStudentTable(unparsed, weekIn) {
-    studentID = arraySearch(students, unparsed) + 1
+    studentID = parseInt(unparsed) + 1
     week = "";
     if (weekIn <= 9) {
         week = "0" + weekIn
