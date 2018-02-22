@@ -128,6 +128,11 @@ window.onload = function() {
     document.getElementById("iframe").style = "overflow: hidden; max-width: " + (parseInt(document.getElementsByTagName("body")[0].clientWidth) - 40) + "px; min-height: 800px; margin: 10px;"
 }
 
+window.onresize = function(event) {
+    document.getElementById("iframe").style = "overflow: hidden; max-width: " + (parseInt(document.getElementsByTagName("body")[0].clientWidth) - 40) + "px; min-height: 800px; margin: 10px;"
+};
+
+
 function setDefault(id, type){
     Cookies.set('id', id, { expires: 365 })
     Cookies.set('type', type, { expires: 365 })
