@@ -97,7 +97,7 @@ window.onload = function() {
         }
     }
 
-    document.getElementById("iframe").style = "overflow: scroll; max-width: " + document.getElementsByTagName("body")[0].clientWidth + "px;" 
+    document.getElementById("iframe").style = "overflow: hidden; max-width: " + (parseInt(document.getElementsByTagName("body")[0].clientWidth) - 40) + "px; min-height: 800px; margin: 10px;"
 }
 
 function setDefault(id, teacher){
