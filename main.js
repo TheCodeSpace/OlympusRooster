@@ -3,6 +3,9 @@ var students = ["Aalders","Aalst  van","Aart  van","Aarts","Aartsen","Abbenhuis"
 var teachers = ["ABN","ADM","ADR","ARN","BJJ","BKH","BKN","BKR","BOR","BRH","BRJ","BRK","BRM","BSC","BTN","DJK","DMD","DMN","DPP","DRC","DRK","DTS","DTV","EER","ELF","ELZ","ERK","EST","EVM","EVR","GNS","GRH","GRV","GTH","HGS","HKS","HMA","HMD","HPK","HRT","HSA","HSD","HSI","HSM","HUT","HZL","JCB","JNJ","JNT","JNW","KHH","KLK","KLS","KND","KNN","KPM","KRG","KRK","KRV","KST","LBL","LCR","LFN","LMM","LNG","MLL","MRN","MST","OLS","OSC","OST","OZC","PER","PLT","POL","PRJ","RDN","RSS","SCJ","SCK","SCL","SLH","SLM","SLS","SLT","SMD","SNJ","SPM","SPR","STD","STF","STM","STR","SVY","SWS","TAK","THN","TMN","TRN","UBB","ULB","VLD","VRC","VRG","VSS","WNN","WNT","WTR","ZDN","ZNT","ZWR","ZWS"];
 var teachers_id = ["Abendroth","Adema","Adriaans","Arentorst","Booij","Boekhorst","Beekman","Beker","Boer de","BRH","Brouwer","Borkent","Breemer","Bosch","Buteijn","Dijk van","DIMMENDAL","DAMEN","DOPPER","DERKS","DERKSEN","DUITSCHER","DIETVORST","EERSEL","El Afia Mafia DOM IDIOOT LUL","Elzen van den","ERKELENS","DORRIO ESTRADA","EVERS","EVERS","Ginsberg","GROOTE HAAR","GRAVETH","GOETHEM VAN","HOOGSTEDER","HOOGSTEDER","HAM Van den","Hmadouch","Hupkens","HART Van 't","HUISMAN A","HEUSDEN","HUISMAN","HUISMAN M","HUT","HAZELEGER","JACOBS","JONG DE","JANSEN","JANSEN W","KOEHORST H","KOLKMAN","KLAASSEN","KINDT","KNIJNENBURG AARDIG SLIM","KOOPMANS N","KRIJGSMAN","KERKHOFF","KORVING","KUSTERS","LE BLANC","LACROIX","LOEFFEN","LAMMERS","LAMMERS","LAMMERS","MEIJERINK","MIJSTERS","OLSTHOORN","OSCH Van","OOSTERINK","OZCELIK","PERA","PLET","POL Van de","PEREE","ROODING","ROSSEM","SCHURINK","SCHEURINK","SCHILS","SLUITER","SAALMINK","SLUIJS","SLOTS","SMIDTS","SUNTJENS","SPOORMANS","SPRONK","STADA","STIJF","STEMERDINK","SUITERS","SAVY","SWEERS","TAK","THEUNISSEN","TAMINIAU","TRANKLE","UBBINK","ULUBAS","VELD In 't","VREEMAN","VIERGEVER","VISSINGA","WIJNEN","WENTINK","WETERING VAN DE","ZIJDEN van der","ZANTEN Van","ZWEERS","ZWARTS"];
 var teachers_subj = ["Wiskunde","Wiskunde","Engels","Nederlands","Wetenschap Techniek Mentor","BKH","Engels","Aardrijkskunde","Geschiedenis Mentor","BRH","Aardrijkskunde Mentor","Muziek","Biologie Mentor","Lichamelijke Opvoeding Mentor","Frans Mentor","Engels","Engels","Techniek Wetenschap","Economie","DRC","Lichamelijke Opvoeding","Wiskunde","Natuurkunde NLT NASK Mentor","EER","Wiskunde NLT","Nederlands","Duits Mentor","Nederlands Duits Mentor","","Informatika","Duits","Drama OC+","Frans","Beeldende Voorming","Lichamelijke Opvoeding Mentor","Nederlands","Drama Informatika","Mentor Maatschappijleer Aardrijkskunde","Klassiek Latijn","Engels","Wetenschap Techniek Geschiedenis","CKV Kunst Algemeen Beeldende Voorming","Mentor Engels","Lichamelijke Opvoeding BSM","Dans Mentor","Aardrijkskunde Mentor","Maatschapijleer Maatschapijwetenschappen Mentor","Klassiek Grieks","Duits","Lichamelijke Opvoeding Mentor","Nederlands","Wiskunde Rekenen","Geschiedenis","KND","Scheikunde NLT Mentor","Informatika","Maatschappij Wetenschappen","Frans Mentor","Duits","Economie Mentor","Biologie Mentor","Biologie Mentor","Nederlands","Economie MO Mentor","","Rekenen","Biologie Mentor","Engels","Drama Mentor Kunst Algemeen","Lichamelijke Opvoeding Mentor","Biologie","","Nederlands","Nederlands Mentor","Frans","Lichamelike Opvoeding","Wetenschap Mentor","Nederlands OC+ Mentor","Wiskunde Rekenen","Maatschapij Maatschapijwetenschapen Mentor","Biologie Mentor","Nederlands","Frans Mentor","","Wiskunde Rekenen","Aardrijkskunde","Wiskunde Rekenen Mentor","Muziek","Informatika Mentor","Wiskunde","","Beeldende Vorming","Scheikunde","Engels Mentor","Geschiedenis Mentor","Biologie","Frans Mentor","Wetenschap Techniek Natuurkude","Duits Dans CKV Mentor","Rekenen Mentor Biologie","Engels Mentor","NASK Wetenschap Techniek Mentor","Techniek","","Wiskunde","Aardrijkskunde","Engels Mentor","Dans","Natuurkunde Mentor","","Geschiedenis Mentor","Mentor Wiskunde"];
+var classes = ["M1A","M1B","M1C","MH1A","MH1B","H1C","HV1A","V1B","JL1A","JL1B","JL1C","JL1D","JL1E","JL1F","JL1G","JL1H","JL1K","M2A","M2B","MH2A","H2B","H2C","V2A","VG2B","M3A","M3B","M3C","H3A","H3B","H3C","V3A","V3B","M4A","M4B","M4C","M4D","H4A","H4B","H4C","V4A","V4B","H5A","H5B","H5C","V5A","V5B","V6A","V6B","OCP"];
+var studtable = [22,36,28,40,20,19,45,28,20,34,39,37,19,45,27,26,34,25,25,38,41,35,27,39,18,18,19,22,44,22,19,18,20,46,43,22,18,35,26,20,43,19,28,41,28,36,36,28,47,36,38,27,25,42,39,27,45,20,26,28,39,43,36,44,18,48,44,25,25,30,20,43,43,18,27,35,45,26,22,25,18,21,44,43,21,19,30,26,46,39,48,40,25,22,38,35,21,26,21,45,21,39,37,39,47,33,44,38,38,25,41,36,48,27,19,48,19,19,38,22,34,21,34,42,34,48,21,42,21,37,26,22,21,20,47,38,37,43,20,46,25,43,25,40,42,33,22,42,20,37,41,33,34,21,18,27,27,41,40,42,39,42,29,29,40,33,42,44,35,33,38,28,39,29,37,20,35,20,42,48,28,26,38,40,45,22,39,26,28,33,39,29,41,20,22,19,37,41,44,25,26,36,27,33,39,22,19,41,29,39,45,41,42,42,46,33,22,41,19,41,42,37,40,37,27,43,38,35,41,43,45,27,29,43,43,34,42,36,45,41,47,48,26,34,34,41,46,47,28,30,41,38,43,44,39,46,35,18,40,36,37,47,44,29,39,34,37,41,30,45,37,35,18,34,26,34,25,39,30,47,36,41,22,18,18,19,40,29,37,20,44,41,46,39,38,27,18,29,44,20,29,40,18,39,26,27,37,42,39,21,20,18,18,37,25,37,33,39,20,47,39,48,45,28,44,45,19,34,30,28,30,19,33,27,26,40,46,36,42,33,29,30,19,35,27,29,18,35,47,22,19,27,39,46,28,42,38,29,30,46,47,21,34,30,18,26,48,27,22,47,47,22,22,18,37,30,48,44,33,21,43,48,21,33,25,25,37,20,20,21,33,37,44,34,44,45,22,21,22,27,40,39,33,48,21,33,29,41,21,38,46,30,30,33,40,45,38,35,27,19,44,26,18,44,18,36,26,27,37,30,26,26,25,33,30,26,36,19,26,25,38,34,20,28,34,19,29,36,21,46,43,36,34,37,44,28,18,35,29,46,39,21,30,42,36,18,42,35,45,19,47,46,28,26,21,42,26,43,29,45,37,25,22,37,39,41,29,47,33,27,44,26,36,40,48,46,33,34,38,36,35,45,40,45,29,38,35,40,26,19,37,44,38,26,30,44,43,43,35,40,22,20,25,44,28,41,43,46,44,22,47,40,45,40,26,42,21,27,25,46,27,25,41,30,35,41,21,22,36,27,22,36,47,48,45,36,29,28,34,42,43,29,28,25,37,48,38,38,27,33,30,45,30,28,21,34,33,18,46,25,44,34,26,25,44,42,38,44,38,44,41,48,25,35,28,22,18,42,47,21,21,22,30,27,29,45,39,19,40,41,43,36,36,18,18,43,28,33,46,27,29,18,27,27,26,21,40,18,44,46,28,47,46,37,25,25,25,40,22,48,40,29,40,46,22,43,30,21,39,29,26,29,38,42,37,22,42,38,21,19,35,35,46,25,46,30,43,27,46,29,48,43,48,30,40,34,19,37,46,45,43,19,19,40,35,38,30,33,19,37,43];
+
 var next_week = true;
 
 date = new Date()
@@ -63,7 +66,7 @@ function changeWeek() {
 function putInStudents() {
     html = '<select class="selectpicker" data-live-search="true" id="naam">'
     for (let i = 0; i < students.length; i++) {
-        html += "<option data-tokens='" + students_id[i] + " " + students[i] + "'value='" + i + "'>" + students[i] + "</option>"
+        html += "<option data-tokens='" + students_id[i] + " " + students[i] + " " + classes[studtable[i] - 1] + "'value='" + i + "'>" + students[i] + "</option>"
         if (i == (parseInt(students.length)-1)) {
             html += "</select>"
             document.getElementById("name__").innerHTML = html
@@ -82,6 +85,26 @@ function putInTeachers() {
     }
 }
 
+function putInClasses() {
+    html = '<select class="selectpicker" data-live-search="true" id="klas">'
+    for (let i = 0; i < classes.length; i++) {
+        html += "<option data-tokens='" + classes[i]
+        for (let p = 0; p < studtable.length; p++) {
+            if (studtable[p] == parseInt(i + 1)) {
+                html += " " + students[p]
+            }
+            if (p == (parseInt(studtable.length)-1)) {
+                html += "'value='" + i + "'>" + classes[i] + "</option>"
+                if (i == (parseInt(classes.length)-1)) {
+                    html += "</select>"
+                    document.getElementById("klas__").innerHTML = html
+                }
+            }
+        }
+        
+    }
+}
+
 window.onload = function() {
 	document.getElementById("week").childNodes[1].innerHTML = getDateRangeOfWeek(date.getWeek())
 	document.getElementById("week").childNodes[2].innerHTML = getDateRangeOfWeek(date.getWeek()+1)
@@ -90,25 +113,32 @@ window.onload = function() {
 		id = getDefault()
 
 		changeWeek()
-        if (id[1] == false) {
-            getStudentTable(id[0], date.getWeek())
-        } else {
+        if (id[1] == "teacher") {
             getTeacherTable(id[0], date.getWeek())
+
+        } else if (id[1] == "class") {
+            getClassTable(id[0], date.getWeek())
+
+        } else {
+            getStudentTable(id[0], date.getWeek())
+
         }
     }
 
     document.getElementById("iframe").style = "overflow: hidden; max-width: " + (parseInt(document.getElementsByTagName("body")[0].clientWidth) - 40) + "px; min-height: 800px; margin: 10px;"
 }
 
-function setDefault(id, teacher){
+function setDefault(id, type){
     Cookies.set('id', id, { expires: 365 })
-    Cookies.set('teacher', teacher, { expires: 365 })
+    Cookies.set('type', type, { expires: 365 })
     location.reload()
 }
 
 function getDefault(){
-    if (Cookies.get('teacher') == "true"){
-        return [Cookies.get('id'), true]
+    if (Cookies.get('type') == "teacher"){
+        return [Cookies.get('id'), "teacher"]
+    } else if (Cookies.get('type') == "class"){
+        return [Cookies.get('id'), "class"]
     } else {
         return [Cookies.get('id'), false]
     }
@@ -171,10 +201,34 @@ function getTeacherTable(unparsed, weekIn) {
     document.getElementById("options").setAttribute("hidden", "hidden")
 }
 
+function getClassTable(unparsed, weekIn) {
+    classID = parseInt(unparsed) + 1
+    week = "";
+    if (weekIn <= 9) {
+        week = "0" + weekIn
+    } else {
+        week = weekIn
+    }
+
+    console.log(classID)
+
+    classIDD = "";
+
+    if (classID <= 9) {
+        classIDD = "0000" + classID
+    } else if (classID <= 99) {
+        classIDD = "000" + classID
+    } else if (classID <= 999) {
+        classIDD = "00" + classID
+    }
+	document.getElementById("iframe").src = "http://www4.olympuscollege.nl/roosters/inforooster/dagrooster/" + week + "/c/c" + classIDD + ".htm"
+    document.getElementById("iframe").removeAttribute("hidden")
+    document.getElementById("options").setAttribute("hidden", "hidden")
+}
+
 function openSettings() {
     document.getElementById("iframe").setAttribute("hidden", "hidden")
     document.getElementById("options").removeAttribute("hidden")
-    //document.getElementById("oc_nummer").value = Cookies.get("number")
 }
 
 Date.prototype.getWeek = function() {
@@ -198,5 +252,6 @@ function arraySearch(arr,val) {
 $('document').ready(function() {
     putInStudents()
     putInTeachers()
+    putInClasses()
     $('select').selectpicker();
 })
